@@ -24,8 +24,9 @@ INSTALL
 	If found, comment out any reference to httpd-autoindex.conf. We are replacing this.
 
 
-3. Open autoindex.conf and edit the path on line 7 and 17.
-4. Restart Apache
+3. Open autoindex.conf and edit the path on line 7 and 17, [like this](https://github.com/araguaci/autoindex/blob/main/conf/httpd-autoindex.conf).
+4. Create alias like [this](https://github.com/araguaci/autoindex/blob/main/alias/autoindex.conf)
+5. Restart Apache
 
 CUSTOM THEME
 ----------------
