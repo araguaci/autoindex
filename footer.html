@@ -1,0 +1,27 @@
+<?php
+	function createPath() {
+		$path = $_SERVER['SCRIPT_FILENAME'];
+		$path = str_replace('/', '\\', $path);
+		return $path;
+	}
+?>
+		</div>
+		<script>
+			function myFunction() {
+				/* Get the text field */
+				var copyText = document.getElementById("myInput");
+
+				copyText.select();
+  				copyText.setSelectionRange(0, 99999)
+				/* Copy the text inside the text field */
+				document.execCommand("copy");
+
+			}
+		</script>
+		<div id="footer">
+			<p style="font-size:12px; color:#888888"><?php print @$_SERVER['SERVER_SOFTWARE'] . '<br>' . @$_SERVER['SERVER_SIGNATURE']; ?></p>
+            <div style="float: right;"><input onclick="javascript:document.getElementById('myInputf').select();document.execCommand('copy');return true;" type="text" value="<?php echo createPath(); ?>" id="myInputf"></div>
+		</div>
+	</div>
+</body>
+</html>

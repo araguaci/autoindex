@@ -1,0 +1,105 @@
+body {
+	font-family: helvetica Neue, helvetica, Arial;
+	font-size: 16px;
+	background: #eee;
+}
+
+#page {
+	width: 96%;
+	margin: 0px auto;
+	background: #fff;
+	padding: 25px;
+	border: 1px solid #eee;
+}
+
+
+/*
+	The directory we are browsing
+*/
+.pathline {
+	border-radius: 3px;
+	background: #f3f3f3;
+
+	padding: 7px 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	letter-spacing: 0.5px;
+}
+
+.pathline img {
+	width: 16px;
+	margin-right: 3px;
+}
+
+.pathline a {
+	color: #777;	
+}
+
+.pathline a:hover {
+	color: #333;
+}
+
+
+/*
+	Main table
+*/
+
+#dirlist table a {
+	color: #222;
+}
+
+#dirlist table {
+	width: 100%;
+	text-align: left;
+}
+
+#dirlist table th {
+	padding: 5px 10px;
+	font-size: 15px;
+	cursor: pointer;
+    text-align: center;
+}
+
+#dirlist table td {
+	border-bottom: 1px solid #eee;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+#dirlist table td a {
+	padding: 10px 0px 10px 0px;
+	display: block;
+	width: 500px;
+    white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow:ellipsis;
+	cursor: pointer;
+	font-size: 14px;
+}
+
+#dirlist table img {
+	vertical-align: middle;
+	width: 16px;
+}
+
+#dirlist tr:hover td
+{
+	background: #f9f9f9;
+}
+#dirlist table td:nth-child(3), #dirlist table td:nth-child(4) {
+    text-align: center;
+}
+
+/*
+	Footer
+*/
+#footer {
+	margin-top: 10px;
+	text-align: center;
+}
+
+#footer address{
+	color: #aaa;
+	font-style: normal;
+	font-size: 12px;
+}

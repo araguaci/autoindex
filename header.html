@@ -1,0 +1,83 @@
+<?php
+	define('BASE_URL', "/autoindex/");
+
+	function getPath() {
+    	return dirname($_SERVER["REQUEST_URI"] . '/.');
+	}
+
+	function createFilePath() {
+		$dir = getPath();
+		$result = $current = "";
+		$folders = explode('/', $dir);
+
+		foreach($folders as $folder) {
+			if($folder != "" && $folder[0] != "?") {
+				$result .= '<a href="'.str_replace(' ', '+', $current.'/'.$folder).'">/' . str_replace('%20', ' ', $folder) . '</a>';
+				$current .= '/' . $folder;
+			}
+		}
+
+		return $result;
+	}	
+	function createPath() {
+		$path = $_SERVER['SCRIPT_FILENAME'];
+		$path = str_replace('/', '\\', $path);
+		return $path;
+	}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title><?php echo getPath(); ?></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/autoindex/icons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/autoindex/icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/autoindex/icons/favicon-16x16.png">
+        <!--<base target='_blank'/>-->
+		<link rel="stylesheet" href="/autoindex/css/reset.css" />
+		<link rel="stylesheet" href="/autoindex/css/autoindex.css" />
+        <script type="text/javascript" src="/autoindex/jquery.min.js"></script>		
+		<script type="text/javascript" src="/autoindex/scrolltopcontrol.min.js"></script>	
+        <!--[if lte IE 6]>
+		<style>
+			div.irtopo img, div.irtopo a {
+				position:absolute; 
+				bottom:0px; 
+				right:0;
+				}
+		</style>
+        <![endif]-->
+        <!--[if lte IE 7]>
+            <style>
+                div.irtopo img,div.irtopo a {
+                    position:absolute; 
+                    bottom:0px; 
+                    right:0;
+                    }
+            </style>
+        <![endif]-->
+        <!--[if lte IE 8]>
+            <style>
+                div.irtopo img,div.irtopo a {
+                    position:absolute; 
+                    bottom:0; 
+                    right:0; 
+                    }
+            </style>
+        <![endif]-->
+		<script>
+		function myFunction() {
+				/* Get the text field */
+				var copyText = document.getElementById("myInput");
+
+				copyText.select();
+  				copyText.setSelectionRange(0, 99999)
+				/* Copy the text inside the text field */
+				document.execCommand("copy");
+			}
+		</script>
+	</head>
+	<body>
+		<div id="page">
+			<div class="pathline"><a href="./@_index_@.php" title="folder grid index"><img src="/autoindex/icons/arterdosul.png" alt="" /></a><a href="http://localhost/apps/" title="home localhost apps">&nbsp;<img src="/autoindex/icons/home.png" alt="" /></a> <?php print createFilePath();?><div style="float: right;"><input onclick="javascript:document.getElementById('myInput').select();document.execCommand('copy');return true;" type="text" value="<?php echo createPath(); ?>" id="myInput"></div></div>
+			<div id="dirlist">

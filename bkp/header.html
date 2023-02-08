@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <link rel="stylesheet" href="/icons/autoindex.css" type="text/css" media="screen" />
+        <title>Listagem Automática do Apache</title>
+</head>
+<body>
+
+<div id="wrapper">
+
+<div id="titulo"><h1>Listagem Automática do Apache</h1></div>
+
+<!-- Exemplo de seleção tirado da documentação do Apache -->
+<form action="" method="get">
+<p>Ordenar por:
+<select name="C">
+        <option value="N" selected="selected"> Nome</option>
+        <option value="M"> Data de Modificação</option>
+        <option value="S"> Tamanho</option>
+</select>
+<select name="O">
+<option value="A" selected="selected"> Crescente</option>
+<option value="D"> Decrescente</option>
+</select>
+Padrão: <input type="text" name="P" value="*" />
+<input type="submit" name="X" value="Ir" /></p>
+</form>
+
+<div id="listagem">
