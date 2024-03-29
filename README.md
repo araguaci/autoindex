@@ -33,7 +33,8 @@ You can create your own .css file in the css folder and reference it in the head
 
 EXAMPLE
 -------
-![example](http://i.solidfiles.net/b215662ded.png)
+![example](https://github.com/araguaci/autoindex/blob/main/index.jpeg)
+
 
 
 LICENSE
