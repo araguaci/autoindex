@@ -20,7 +20,9 @@
 		return $result;
 	}	
 	function createPath() {
-		$path = $_SERVER['SCRIPT_FILENAME'];
+		//$_SERVER('SCRIPT_FILENAME')
+		//$_SERVER('CONTEXT_DOCUMENT_ROOT')
+		$path = $_SERVER['CONTEXT_DOCUMENT_ROOT'];
 		$path = str_replace('/', '\\', $path);
 		return $path;
 	}
@@ -79,5 +81,5 @@
 	</head>
 	<body>
 		<div id="page">
-			<div class="pathline"><a href="./@_index_@.php" title="folder grid index"><img src="/autoindex/icons/arterdosul.png" alt="" /></a><a href="http://localhost/apps/" title="home localhost apps">&nbsp;<img src="/autoindex/icons/home.png" alt="" /></a> <?php print createFilePath();?><div style="float: right;"><input onclick="javascript:document.getElementById('myInput').select();document.execCommand('copy');return true;" type="text" value="<?php echo createPath(); ?>" id="myInput"></div></div>
+			<div class="pathline"><a href="./_index.php" title="folder grid index"><img src="/autoindex/icons/arterdosul.png" alt="" /></a><a href="http://localhost/apps/" title="home localhost apps">&nbsp;<img src="/autoindex/icons/home.png" alt="" /></a> <?php print createFilePath();?><div style="float: right;"><input onclick="javascript:document.getElementById('myInput').select();document.execCommand('copy');return true;" type="text" value="<?php echo createPath(); ?>" id="myInput"></div></div>
 			<div id="dirlist">

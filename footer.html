@@ -1,5 +1,5 @@
 <?php
-	function createPath() {
+	function createPath2() {
 		$path = $_SERVER['SCRIPT_FILENAME'];
 		$path = str_replace('/', '\\', $path);
 		return $path;
@@ -18,10 +18,32 @@
 
 			}
 		</script>
+<!--
+		<script type="text/javascript">
+			$('a[rel="external"]').attr('target', '_blank');
+		</script>
+-->
 		<div id="footer">
 			<p style="font-size:12px; color:#888888"><?php print @$_SERVER['SERVER_SOFTWARE'] . '<br>' . @$_SERVER['SERVER_SIGNATURE']; ?></p>
-            <div style="float: right;"><input onclick="javascript:document.getElementById('myInputf').select();document.execCommand('copy');return true;" type="text" value="<?php echo createPath(); ?>" id="myInputf"></div>
+            <div style="float: right;"><input onclick="javascript:document.getElementById('myInputf').select();document.execCommand('copy');return true;" type="text" value="<?php echo createPath2(); ?>" id="myInputf"></div>
 		</div>
 	</div>
+<?php
+//echo "<pre>";
+//print_r($_SERVER);
+//echo "</pre>";
+?>
+<!--
+<script>
+let myLinks = document.querySelectorAll('a');
+
+for (let link of myLinks) {
+  link.setAttribute('target', '_blank');
+}
+-->
+</script>
 </body>
 </html>
+<?php
+    //include_once('D:/_apps/index.php');
+?>

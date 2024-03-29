@@ -1,6 +1,10 @@
+Not maintained
+--------------
+I no longer maintain or use this. Please have a look at http://adamwhitcroft.com/apaxy/. He seem to be doing something similar as this :-)
+
 ABOUT
 -----
-A better looking directory listing for apache.
+A better looking directory listing for apache, I guess.
 
 REQUIREMENTS
 ------------
@@ -11,15 +15,17 @@ INSTALL
 1. clone repo to somewhere safe on your server
 2. Open up apache httpd.conf and add this line:
 
-		Include <path/to/git-repo/>/conf/autoindex.conf
+		Include <path/to/git-repo/>/autoindex.conf
 	
 	Make sure autoindex_module is installed and enabled
 	
 		LoadModule autoindex_module libexec/apache2/mod_autoindex.so
 
-3. Open autoindex.conf and edit the path on line 7, 9 and 17, [like this](https://github.com/araguaci/autoindex/blob/main/conf/httpd-autoindex.conf).
-4. Create alias like [this](https://github.com/araguaci/autoindex/blob/main/alias/autoindex.conf)
-5. Restart Apache
+	If found, comment out any reference to httpd-autoindex.conf. We are replacing this.
+
+
+3. Open autoindex.conf and edit the path on line 7 and 17.
+4. Restart Apache
 
 CUSTOM THEME
 ----------------
